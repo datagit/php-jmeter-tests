@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+use iTymz\JMeterTests\Command\SiteFunctionalTest;
+use iTymz\JMeterTests\Command\SiteMapDownloader;
+use iTymz\JMeterTests\Command\SiteMapTest;
+use Symfony\Component\Console\Application;
+
+require_once __DIR__ . '/../src/bootstrap.php';
+
+// Build Console Application
+$application = new Application();
+
+$application->add($container->get(SiteFunctionalTest::class));
+$application->add($container->get(SiteMapDownloader::class));
+$application->add($container->get(SiteMapTest::class));
+
+$application->run();

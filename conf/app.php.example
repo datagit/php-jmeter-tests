@@ -1,0 +1,9 @@
+<?php
+// Main section of app configuration
+
+define("JMETER_BIN", "jmeter");
+
+// Example Apache JMeter Site Map test in examples directory
+define("SITEMAP_JMX_TEST_FILE", "/path/to/your/sitemap.jmx");
+define("FUNCTIONAL_JMX_TEST_FILE", "/path/to/your/functional.jmx");
+define("JMETER_OUTPUT_FILE", "/path/to/your/php-jmeter-tests/var/out.log");

@@ -1,0 +1,5 @@
+<?php
+
+return array(
+    'example.com' => 'http://example.com/sitemap.xml'
+);
