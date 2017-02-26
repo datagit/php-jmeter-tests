@@ -74,10 +74,10 @@ class SiteMapTest extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln("Start test based on site maps in your config file");
+        $output->writeln('Start test based on site maps in your config file');
         $siteMaps = $this->siteMapDownloader->downloadSiteMaps();
         $siteMaps->exportToCSVFile();
-        $output->writeln("Download and export data completed for: " . implode(', ', array_keys($siteMaps->getData())));
+        $output->writeln('Download and export data completed for: ' . implode(', ', array_keys($siteMaps->getData())));
         $this->JMeterService->startJMeterTest(SITEMAP_JMX_TEST_FILE);
     }
 }

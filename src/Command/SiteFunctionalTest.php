@@ -16,16 +16,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 class SiteFunctionalTest extends Command
 {
     /**
-     * @var array
-     */
-    private $siteMaps;
-
-    /**
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
      * @var JMeterService
      */
     private $JMeterService;
@@ -33,21 +23,15 @@ class SiteFunctionalTest extends Command
     /**
      * SiteFunctionalTest constructor.
      *
-     * @param array $siteMaps
-     * @param LoggerInterface $logger
      * @param JMeterService $JMeterService
      * @param null $name
      */
     public function __construct(
-        array $siteMaps,
-        LoggerInterface $logger,
         JMeterService $JMeterService,
         $name = null
     )
     {
         parent::__construct($name);
-        $this->siteMaps = $siteMaps;
-        $this->logger = $logger;
         $this->JMeterService = $JMeterService;
     }
 
@@ -65,7 +49,7 @@ class SiteFunctionalTest extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln("Start functional test based on JMX File");
+        $output->writeln('Start functional test based on JMX File');
         $this->JMeterService->startJMeterTest(FUNCTIONAL_JMX_TEST_FILE);
     }
 }

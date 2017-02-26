@@ -11,10 +11,10 @@ use iTymz\JMeterTests\Model\SiteMapDownloader as SiteMapDownloaderModel;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../conf/app.php';
-$siteMap = require_once __DIR__ . '/../conf/sites.php';
+$siteMap = require __DIR__ . '/../conf/sites.php';
 
 if (!is_array($siteMap)) {
-    die("Please check your conf/sites.php file as it probably has the wrong structure.");
+    die('Please check your conf/sites.php file as it probably has the wrong structure.');
 }
 
 $builder = new DI\ContainerBuilder();
@@ -29,8 +29,6 @@ $builder->addDefinitions([
         return $logger;
     }),
     SiteMapDownloaderModel::class => DI\object()
-        ->constructorParameter('siteMaps', $siteMap),
-    SiteFunctionalTest::class => DI\object()
         ->constructorParameter('siteMaps', $siteMap),
     SiteMapDownloader::class => DI\object()
         ->constructorParameter('siteMaps', $siteMap),

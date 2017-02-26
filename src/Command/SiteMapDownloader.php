@@ -32,17 +32,13 @@ class SiteMapDownloader extends Command
     private $siteMapDownloader;
 
     /**
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
      * SiteMapDownloader constructor.
      *
      * @param array $siteMaps
      * @param SiteMapDownloaderModel $siteMapDownloader
      * @param LoggerInterface $logger
      * @param null $name
+     * @throws \Symfony\Component\Console\Exception\LogicException
      */
     public function __construct(
         array $siteMaps,
@@ -54,7 +50,6 @@ class SiteMapDownloader extends Command
         parent::__construct($name);
         $this->siteMaps = $siteMaps;
         $this->siteMapDownloader = $siteMapDownloader;
-        $this->logger = $logger;
     }
 
     protected function configure()
@@ -69,11 +64,12 @@ class SiteMapDownloader extends Command
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return void
+     * @throws \Symfony\Component\Console\Exception\InvalidArgumentException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         if (!empty($siteMap = $input->getArgument(self::ARG_WEBSITE))) {
-            if (in_array($siteMap, array_keys($this->siteMaps))) {
+            if (array_key_exists($siteMap, $this->siteMaps)) {
                 if (isset($this->siteMaps[$siteMap])) {
                     $siteMaps = $this->siteMapDownloader->downloadSiteMapByKey($siteMap);
                     $siteMaps->exportToCSVFile();
@@ -82,10 +78,10 @@ class SiteMapDownloader extends Command
                     ));
                 }
             } else {
-                $output->writeln("Site map " . $siteMap . " does not exists in your config file!!!");
+                $output->writeln('Site map ' . $siteMap . ' does not exists in your config file!!!');
             }
         } else {
-            $output->writeln("Start download site maps contained in your config file");
+            $output->writeln('Start download site maps contained in your config file');
             $siteMaps = $this->siteMapDownloader->downloadSiteMaps();
             $siteMaps->exportToCSVFile();
             $output->writeln(sprintf('Download and export data completed for: %s',
