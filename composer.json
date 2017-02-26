@@ -1,7 +1,7 @@
 {
-  "name": "iTymz/php-jmeter-tests",
+  "name": "itymz/php-jmeter-tests",
   "description": "Simple PHP API that allows to perform crawler (with tests) based on latest site map, and run your personal functional tests.",
-  "author": "Tymoteusz Hajder",
+  "keywords": ["crawler", "tests", "sitemap", "functional test"],
   "require": {
     "vipnytt/sitemapparser": "^1.0",
     "symfony/console": "^3.2",
