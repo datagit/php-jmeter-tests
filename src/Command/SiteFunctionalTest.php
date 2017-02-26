@@ -54,8 +54,8 @@ class SiteFunctionalTest extends Command
     protected function configure()
     {
         $this->setName('app:functional:test')
-            ->setDescription('Run functional test based on URL address.')
-            ->setHelp("This command allows you to start functional test...");
+            ->setDescription('Run functional test.')
+            ->setHelp('This command allows you to start functional test...');
     }
 
     /**

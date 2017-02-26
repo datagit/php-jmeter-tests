@@ -63,8 +63,8 @@ class SiteMapTest extends Command
     protected function configure()
     {
         $this->setName('app:sitemap:test')
-            ->setDescription('Run site map test based on URL address.')
-            ->setHelp("This command allows you to start test based on latest site maps...");
+            ->setDescription('Run site map test based on latest site maps.')
+            ->setHelp('This command allows you to start test based on latest site maps...');
     }
 
     /**

@@ -36,8 +36,8 @@ In `Available commands` section you should see
 ```  
  Lists commands
  app
-  app:functional:test  Run functional test based on URL address.
-  app:sitemap:test          Run site map test based on URL address.
+  app:functional:test       Run functional test.
+  app:sitemap:test          Run site map test based on latest site maps.
   app:sitemap:update        Download the latest version of site map from config data.
 
 ```

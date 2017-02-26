@@ -61,7 +61,7 @@ class SiteMapDownloader extends Command
     {
         $this->setName('app:sitemap:update')
             ->setDescription('Download the latest version of site map from config data.')
-            ->setHelp("This command allows you to download the latest site map.");
+            ->setHelp('This command allows you to download the latest site map.');
         $this->addArgument(self::ARG_WEBSITE, InputArgument::OPTIONAL, 'The website key to download the latest site map.');
     }
 
