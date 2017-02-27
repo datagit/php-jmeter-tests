@@ -7,9 +7,9 @@ If you have any questions, problems related with this project send me an email, 
 
 ### Prerequisites
 
-* PHP [>=7.0] (with SimpleXML extension)
+* PHP >=7.0
 * Composer
-* Apache JMeter [>=3.1] (Recommended)
+* Apache JMeter >=3.1
 
 **Optional (for statistic)**
 
