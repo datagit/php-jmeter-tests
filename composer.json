@@ -1,6 +1,6 @@
 {
   "name": "itymz/php-jmeter-tests",
-  "description": "Simple PHP CLI that allows to perform crawler (with tests) based on latest site map, and run your personal functional tests.",
+  "description": "Simple PHP CLI app that allows to perform crawler (with tests) based on latest site map, and run your personal functional tests.",
   "keywords": ["crawler", "tests", "sitemap", "functional test"],
   "require": {
     "vipnytt/sitemapparser": "^1.0",

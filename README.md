@@ -1,6 +1,6 @@
 # PHP Apache JMeter Tests
 
-Simple PHP CLI that allows to perform crawler (with tests) based on latest site map, and run your personal functional tests.
+Simple PHP CLI app that allows to perform crawler (with tests) based on latest site map, and run your personal functional tests.
 
 ### Questions
 If you have any questions, problems related with this project send me an email, or catch me on twitter [@_iTymz](https://twitter.com/_iTymz).
